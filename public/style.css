@@ -1,0 +1,15 @@
+.inputs div {
+    margin-bottom: 3px;
+}
+
+.inputs > div {
+    display: flex;
+    margin-right: 10px;
+}
+
+#result1, 
+#result2, 
+#result3 {
+    margin-left: 10px;
+    color: brown;
+}
