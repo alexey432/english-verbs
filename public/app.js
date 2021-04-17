@@ -11,11 +11,6 @@
 // };
 
 async function update() {
-    // const response = await fetch('/asd');
-    // const all = await response.json();
-
-    // console.log(all)
-
     const csv = await fetch('./verbs.csv');
     const data = await csv.text();
     const verbRandom = data.split(",").slice(1);
@@ -36,15 +31,8 @@ const result3 = document.getElementById('result3');
 
 
 async function check() {
-    // const response = await fetch('/asd');
-    // const all = await response.json();
-
-   
-
     const file = await fetch('./verbs.json');
     const fileJson = await file.json();
-    // sdasdasda
-    // let num = Math.floor(Math.random() * 3);
 
     console.log(verb.textContent)
     console.log(fileJson[`${verb.textContent}`])
@@ -53,3 +41,22 @@ async function check() {
     result2.textContent = a_neg_1.value === fileJson[`${verb.textContent}`].a_neg_1 ? 'good' : 'bad';
     result3.textContent = a_int_1.value === fileJson[`${verb.textContent}`].a_int_1 ? 'good' : 'bad';
 }
+
+
+// Affirmative
+function makeTask() {
+    const form = document.querySelector('.inputs');
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+    const input = document.createElement('input');
+    const p = document.createElement('p');
+    
+    div2.appendChild(p);
+    div2.appendChild(input);
+    div1.appendChild(div2)
+    
+    form.appendChild(div1);
+}
+
+
+makeTask();
