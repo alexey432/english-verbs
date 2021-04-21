@@ -12,18 +12,37 @@
     <button onclick="check()">Check</button>
     <button onclick="update()">Update</button>
     <br/>
-    <div id="verb"></div>
+    <div class="verb-choice">
+        <div>Verb: <div id="verb"></div></div>
+    </div>
+    <div class="tense-choice">
+        <div>Tense: <div id="tense"></div></div>
+    </div>
     <br/>
     <div class="inputs">
-        <!-- <div>
-            <div><p>Affirmative:</p><input type="text" id="a_aff_1" autocomplete="off"></div><div id="result1"></div>
-        </div>
-        <div>
-            <div><p>Negative:</p><input type="text" id="a_neg_1" autocomplete="off"></div><div id="result2"></div>
-        </div>
-        <div>
-            <div><p>Interrogative:</p><input type="text" id="a_int_1" autocomplete="off"></div><div id="result3"></div>
-        </div> -->
+        <form class="affirmative-1">
+            <p>Affirmative:</p>
+            <input type="text" id="a_aff_1" autocomplete="off">
+            <div id="result1"></div>
+        </form>
+
+        <form class="negative-1">
+            <p>Negative:</p>
+            <input type="text" id="a_neg_1" autocomplete="off">
+            <div id="result2"></div>
+        </form>
+
+        <form class="interrogative-1">
+            <p>Interrogative:</p>
+            <input type="text" id="a_int_1" autocomplete="off">
+            <div id="result3"></div>
+        </form>
+    </div>
+
+    <div>
+        <input type="checkbox" id="tense-1"><label for="tense-1">Present Simple</label><br/>
+        <input type="checkbox" id="tense-1"><label for="tense-1">Past Simple</label><br/>
+        <input type="checkbox" id="tense-1"><label for="tense-1">Future Simple</label>        
     </div>
     
     <!-- <script src="../index.js"></script> -->

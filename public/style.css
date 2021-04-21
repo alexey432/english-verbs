@@ -2,9 +2,49 @@
     margin-bottom: 3px;
 }
 
-.inputs > div {
+.inputs {
+    /* background-color: #f1f1f1; */
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    /* padding: 0 .625em; */
+}
+
+.inputs p {
+    cursor: pointer;
+    /* display: inline-block; */
+    /* padding: 1.5px 3px; */
+    /* text-align: right; */
+    width: 100px;
+    /* vertical-align: top; */
+}
+
+/* .inputs > div {
     display: flex;
     margin-right: 10px;
+} */
+
+.affirmative-1,
+.negative-1,
+.interrogative-1 {
+    display: flex;
+    align-items: center;
+}
+
+.verb-choice > div,
+.tense-choice > div{
+    display: flex;
+
+    margin-top: 10px;
+}
+
+#verb {
+    margin-left: 18px;
+}
+
+#tense {
+    margin-left: 10px;
 }
 
 #result1, 
