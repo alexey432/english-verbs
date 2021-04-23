@@ -1,14 +1,14 @@
 const verb = document.getElementById('verb');
 const tense = document.getElementById('tense');
-const a_aff_1 = document.getElementById('a_aff_1');
-const a_neg_1 = document.getElementById('a_neg_1');
-const a_int_1 = document.getElementById('a_int_1');
-const a_aff_2 = document.getElementById('a_aff_2');
-const a_neg_2 = document.getElementById('a_neg_2');
-const a_int_2 = document.getElementById('a_int_2');
-const a_aff_3 = document.getElementById('a_aff_3');
-const a_neg_3 = document.getElementById('a_neg_3');
-const a_int_3 = document.getElementById('a_int_3');
+const a_aff_1 = document.querySelector('.a_aff_1');
+const a_neg_1 = document.querySelector('.a_neg_1');
+const a_int_1 = document.querySelector('.a_int_1');
+const a_aff_2 = document.querySelector('.a_aff_2');
+const a_neg_2 = document.querySelector('.a_neg_2');
+const a_int_2 = document.querySelector('.a_int_2');
+const a_aff_3 = document.querySelector('.a_aff_3');
+const a_neg_3 = document.querySelector('.a_neg_3');
+const a_int_3 = document.querySelector('.a_int_3');
 
 const result1 = document.getElementById('result1');
 const result2 = document.getElementById('result2');
@@ -39,13 +39,13 @@ const inputtik9 = document.querySelector('.inputtik9');
 
 inputtik1.addEventListener('change', () => piska(inputtik1, 0));
 inputtik2.addEventListener('change', () => piska(inputtik2, 1));
-inputtik3.addEventListener('change', () => piska(inputtik3, 8));
-inputtik4.addEventListener('change', () => piska(inputtik4, 2));
-inputtik5.addEventListener('change', () => piska(inputtik5, 3));
-inputtik6.addEventListener('change', () => piska(inputtik6, 4));
-inputtik7.addEventListener('change', () => piska(inputtik7, 5));
-inputtik8.addEventListener('change', () => piska(inputtik8, 6));
-inputtik9.addEventListener('change', () => piska(inputtik9, 7));
+inputtik3.addEventListener('change', () => piska(inputtik3, 2));
+inputtik4.addEventListener('change', () => piska(inputtik4, 3));
+inputtik5.addEventListener('change', () => piska(inputtik5, 4));
+inputtik6.addEventListener('change', () => piska(inputtik6, 5));
+inputtik7.addEventListener('change', () => piska(inputtik7, 6));
+inputtik8.addEventListener('change', () => piska(inputtik8, 7));
+inputtik9.addEventListener('change', () => piska(inputtik9, 8));
 
 
 function piska(inputtik, numWritingArr) {

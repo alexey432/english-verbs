@@ -13,8 +13,8 @@
         <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <br/>
-    <button onclick="check()">Check</button>
-    <button onclick="update()">Update</button>
+    <button onclick="check()" class="btn btn-primary">Check</button>
+    <button onclick="update()" class="btn btn-primary">Update</button>
     <br/>
     <div class="verb-choice">
         <div>Verb: <div id="verb"></div></div>
@@ -25,62 +25,62 @@
     <br/>
     <p style="color: red;">Все глаголы в отрицании ставить только в полной форме!</p>
     <!-- <br/> -->
-    <div class="inputs">
+    <div class="inputs container">
                
-        <h3>Местоимение Я</h3>
-        <form class="affirmative-1">
-            <p>Affirmative:</p>
-            <input type="text" id="a_aff_1" autocomplete="off" class="inputtik1">
+        <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">I</span></h4>
+        <div class="affirmative-1 form-floating mb-3">
+            <input type="text" id="floatingInput" autocomplete="off" class="a_aff_1 inputtik1 form-control">
+            <label for="floatingInput">Affirmative</label>
             <div id="result1"></div>
-        </form>
+        </div>
 
-        <form class="negative-1">
-            <p>Negative:</p>
-            <input type="text" id="a_neg_1" autocomplete="off" class="inputtik2">
+        <div class="negative-1 form-floating mb-3">
+            <input type="text" id="floatingInput" autocomplete="off" class="a_neg_1 inputtik2 form-control">
+            <label for="floatingInput">Negative</label>
             <div id="result2"></div>
-        </form>
+        </div>
 
-        <form class="interrogative-1">
-            <p>Interrogative:</p>
-            <input type="text" id="a_int_1" autocomplete="off" class="inputtik3">
+        <div class="interrogative-1 form-floating mb-3">
+            <input type="text" id="floatingInput" autocomplete="off" class="a_int_1 inputtik3 form-control">
+            <label for="floatingInput">Interrogative</label>
             <div id="result3"></div>
-        </form>
+        </div>
 
-        <h3>Местоимение Ты</h3>
+        <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">You</span></h4>
         <form class="affirmative-1">
             <p>Affirmative:</p>
-            <input type="text" id="a_aff_2" autocomplete="off" class="inputtik4">
+            <input type="text" id="" autocomplete="off" class="a_aff_2 inputtik4 form-control">
             <div id="result4"></div>
         </form>
 
         <form class="negative-1">
             <p>Negative:</p>
-            <input type="text" id="a_neg_2" autocomplete="off" class="inputtik5">
+            <input type="text" id="" autocomplete="off" class="a_neg_2 inputtik5 form-control">
             <div id="result5"></div>
         </form>
 
         <form class="interrogative-1">
             <p>Interrogative:</p>
-            <input type="text" id="a_int_2" autocomplete="off" class="inputtik6">
+            <input type="text" id="" autocomplete="off" class="a_int_2 inputtik6 form-control">
             <div id="result6"></div>
         </form>
 
-        <h3>Местоимение Он</h3>
+        <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">He</span></h4>
         <form class="affirmative-1">
             <p>Affirmative:</p>
-            <input type="text" id="a_aff_3" autocomplete="off" class="inputtik7">
+            <input type="text" id="" autocomplete="off" class="a_aff_3 inputtik7 form-control">
             <div id="result7"></div>
         </form>
 
         <form class="negative-1">
             <p>Negative:</p>
-            <input type="text" id="a_neg_3" autocomplete="off" class="inputtik8">
+            <input type="text" id="" autocomplete="off" class="a_neg_3 inputtik8 form-control">
             <div id="result8"></div>
         </form>
 
         <form class="interrogative-1">
             <p>Interrogative:</p>
-            <input type="text" id="a_int_3" autocomplete="off" class="inputtik9">
+            <input type="text" id="" autocomplete="off" class="a_int_3 inputtik9 form-control">
             <div id="result9"></div>
         </form>
     </div>
