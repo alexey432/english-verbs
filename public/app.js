@@ -86,39 +86,43 @@ async function check() {
     const file = await fetch(`./verbs/${tense.textContent}.json`);
     const fileJson = await file.json();
 
-    console.log(verb.textContent)
-    console.log(fileJson[`${verb.textContent}`])
+    // console.log(verb.textContent)
+    // console.log(fileJson[`${verb.textContent}`])
 
     const chosenVerb = fileJson[`${verb.textContent}`];
 
+    // const regexArr = [a_aff_1, a_neg_1, a_int_1, a_aff_2, a_neg_2, a_int_2, a_aff_3, a_neg_3, a_int_3];
+    const regexNegArr = [a_neg_1, a_neg_2, a_neg_3];
+
     const regex = /[?]/g;
+    const regex2 = /n+'+t/gm;
+    const regexFuture = /won't/g;
+    const regexAm = /'m not/g;
+    
+    let neg_1,
+        neg_2,
+        neg_3;
+
+    if(tense.textContent == tenses[0]){
+        neg_1 = a_neg_1.value.replace(regex2, ' not');
+        neg_2 = a_neg_2.value.replace(regex2, ' not');
+        neg_3 = a_neg_3.value.replace(regex2, ' not');
+    } else if(tense.textContent == tenses[2]){
+        neg_1 = a_neg_1.value.replace(regexFuture, 'will not');
+        neg_2 = a_neg_2.value.replace(regexFuture, 'will not');
+        neg_3 = a_neg_3.value.replace(regexFuture, 'will not');
+    }
+
+    console.log(neg_1);
+    console.log(chosenVerb.a_neg_1);
 
     result1.textContent = a_aff_1.value.trimEnd() === chosenVerb.a_aff_1 ? 'good' : 'bad';
-    result2.textContent = a_neg_1.value.trimEnd() === chosenVerb.a_neg_1 ? 'good' : 'bad';
+    result2.textContent = neg_1.trimEnd() === chosenVerb.a_neg_1 ? 'good' : 'bad';
     result3.textContent = a_int_1.value.trimEnd().replace(regex, '') === chosenVerb.a_int_1 ? 'good' : 'bad';
     result4.textContent = a_aff_2.value.trimEnd() === chosenVerb.a_aff_2 ? 'good' : 'bad';
-    result5.textContent = a_neg_2.value.trimEnd() === chosenVerb.a_neg_2 ? 'good' : 'bad';
+    result5.textContent = neg_2.trimEnd() === chosenVerb.a_neg_2 ? 'good' : 'bad';
     result6.textContent = a_int_2.value.trimEnd().replace(regex, '') === chosenVerb.a_int_2 ? 'good' : 'bad';
-    result7.textContent = a_aff_3.value.trimEnd() === chosenVerb.a_aff_3 ? 'good' : 'bad';
+    result7.textContent = neg_3.trimEnd() === chosenVerb.a_aff_3 ? 'good' : 'bad';
     result8.textContent = a_neg_3.value.trimEnd() === chosenVerb.a_neg_3 ? 'good' : 'bad';
     result9.textContent = a_int_3.value.trimEnd().replace(regex, '') === chosenVerb.a_int_3 ? 'good' : 'bad';
 }
-
-
-// Affirmative
-// function makeTask() {
-//     const form = document.querySelector('.inputs');
-//     const div1 = document.createElement('div');
-//     const div2 = document.createElement('div');
-//     const input = document.createElement('input');
-//     const p = document.createElement('p');
-    
-//     div2.appendChild(p);
-//     div2.appendChild(input);
-//     div1.appendChild(div2)
-    
-//     form.appendChild(div1);
-// }
-
-
-// makeTask();

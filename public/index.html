@@ -10,20 +10,23 @@
 </head>
 <body>
     <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" role="progressbar" style="width: 0.0001%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <br/>
-    <button onclick="check()" class="btn btn-primary">Check</button>
-    <button onclick="update()" class="btn btn-primary">Update</button>
-    <br/>
-    <div class="verb-choice">
-        <div>Verb: <div id="verb"></div></div>
+    <div class="container">
+        <button onclick="check()" class="btn btn-primary">Check</button>
+        <button onclick="update()" class="btn btn-primary">Update</button>
+        <br/>
+        <div class="verb-choice">
+            <div>Verb: <div id="verb"></div></div>
+        </div>
+        <div class="tense-choice">
+            <div>Tense: <div id="tense"></div></div>
+        </div>
+        <p style="color: red;">Все глаголы в отрицании ставить только в полной форме!</p>
     </div>
-    <div class="tense-choice">
-        <div>Tense: <div id="tense"></div></div>
-    </div>
-    <br/>
-    <p style="color: red;">Все глаголы в отрицании ставить только в полной форме!</p>
+    <!-- <br/> -->
+    
     <!-- <br/> -->
     <div class="inputs container">
                
