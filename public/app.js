@@ -20,9 +20,11 @@ const result7 = document.getElementById('result7');
 const result8 = document.getElementById('result8');
 const result9 = document.getElementById('result9');
 
+const resultsArr = [result1, result2, result3, result4, result5, result6, result7, result8, result9];
 
 const tenses = ['PresentSimple', 'PastSimple', 'FutureSimple'];
-const progress = document.querySelector('.progress-bar');
+const progress = document.querySelector('.bar-difficult');
+const progressEasy = document.querySelector('.bar-easy');
 
 let nnn = 0;
 
@@ -103,7 +105,7 @@ async function check() {
         neg_2,
         neg_3;
 
-    if(tense.textContent == tenses[0]){
+    if(tense.textContent == tenses[0] || tense.textContent == tenses[1]){
         neg_1 = a_neg_1.value.replace(regex2, ' not');
         neg_2 = a_neg_2.value.replace(regex2, ' not');
         neg_3 = a_neg_3.value.replace(regex2, ' not');
@@ -122,7 +124,22 @@ async function check() {
     result4.textContent = a_aff_2.value.trimEnd() === chosenVerb.a_aff_2 ? 'good' : 'bad';
     result5.textContent = neg_2.trimEnd() === chosenVerb.a_neg_2 ? 'good' : 'bad';
     result6.textContent = a_int_2.value.trimEnd().replace(regex, '') === chosenVerb.a_int_2 ? 'good' : 'bad';
-    result7.textContent = neg_3.trimEnd() === chosenVerb.a_aff_3 ? 'good' : 'bad';
-    result8.textContent = a_neg_3.value.trimEnd() === chosenVerb.a_neg_3 ? 'good' : 'bad';
+    result7.textContent = a_aff_3.value.trimEnd() === chosenVerb.a_aff_3 ? 'good' : 'bad';
+    result8.textContent = neg_3.trimEnd() === chosenVerb.a_neg_3 ? 'good' : 'bad';
     result9.textContent = a_int_3.value.trimEnd().replace(regex, '') === chosenVerb.a_int_3 ? 'good' : 'bad';
+    
+    // Progress Bar-easy
+    let n = 0;
+    resultsArr.forEach(result => {
+        if(result.textContent == 'good') {
+            n+= 1/9;
+        }
+    })
+    console.log(n*100);
+    progressEasy.style = `width: ${n*100}%;`;
+    
+    if(n*100 >= 100){
+        document.querySelector('.bar-final').style = 'color: green';
+        document.querySelector('.bar-final').textContent = 'Excellent !!!';
+    }
 }
