@@ -20,4 +20,5 @@ for(i=0;i<paragraph.length;i++){
 }
 
 
-// console.log('Стало:', paragraph)
+console.log('Стало:', paragraph)
+
