@@ -124,15 +124,9 @@ async function check() {
     result8.textContent = neg_3.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_neg_3.toLowerCase() ? 'good' : chosenVerb.a_neg_3;
     result9.textContent = a_int_3.value.trim().replace(regex, '').toLowerCase().trim() === chosenVerb.a_int_3.toLowerCase() ? 'good' : chosenVerb.a_int_3;
     
-    result1.textContent === 'good' ? result1.style = 'color: green;' : result1.style = 'color: red;';
-    result2.textContent === 'good' ? result2.style = 'color: green;' : result2.style = 'color: red;';
-    result3.textContent === 'good' ? result3.style = 'color: green;' : result3.style = 'color: red;';
-    result4.textContent === 'good' ? result4.style = 'color: green;' : result4.style = 'color: red;';
-    result5.textContent === 'good' ? result5.style = 'color: green;' : result5.style = 'color: red;';
-    result6.textContent === 'good' ? result6.style = 'color: green;' : result6.style = 'color: red;';
-    result7.textContent === 'good' ? result7.style = 'color: green;' : result7.style = 'color: red;';
-    result8.textContent === 'good' ? result8.style = 'color: green;' : result8.style = 'color: red;';
-    result9.textContent === 'good' ? result9.style = 'color: green;' : result9.style = 'color: red;';
+    resultsArr.forEach((result) => {
+        result.textContent === 'good' ? result.style = 'color: green;' : result.style = 'color: red;';
+    })
 
     // Progress Bar-easy
     let n = 0;
