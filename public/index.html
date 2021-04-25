@@ -13,83 +13,94 @@
         <div class="progress-bar bar-difficult" role="progressbar" style="width: 0.0001%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <br/>
-    <div class="container">
-        <button onclick="check()" class="btn btn-primary">Check</button>
-        <button onclick="update()" class="btn btn-primary">Update</button>
-        <br/>
-        <div class="verb-choice">
-            <div>Verb: <div id="verb"></div></div>
+    <div class="container" style="width: 40%;">
+        <div class="container">
+            <button onclick="check()" class="btn btn-primary">Check</button>
+            <button onclick="update()" class="btn btn-primary">Update</button>
+            <br/>
+            <div class="verb-choice h3">
+                <div>Verb: <div id="verb"></div></div>
+            </div>
+            <div style="color: rgba(128, 128, 128, 0.829);" class="tense-choice h3">
+                <div >Tense: <div id="tense"></div></div>
+            </div>
+            <p style="color: red;">
+                Before doing anything CLICK "Update" button <br/>
+                When you fill the gaps CLICK "Check" button
+            </p>
         </div>
-        <div class="tense-choice">
-            <div>Tense: <div id="tense"></div></div>
-        </div>
-        <p style="color: red;">Все глаголы в отрицании ставить только в полной форме!</p>
-    </div>
-    <!-- <br/> -->
-    
-    <!-- <br/> -->
-    <div class="inputs container">
-               
-        <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">I</span></h4>
-        <div class="affirmative-1 form-floating mb-3">
-            <input type="text" id="floatingInput" autocomplete="off" class="a_aff_1 inputtik1 form-control">
-            <label for="floatingInput">Affirmative</label>
-            <div id="result1"></div>
-        </div>
-
-        <div class="negative-1 form-floating mb-3">
-            <input type="text" id="floatingInput" autocomplete="off" class="a_neg_1 inputtik2 form-control">
-            <label for="floatingInput">Negative</label>
-            <div id="result2"></div>
-        </div>
-
-        <div class="interrogative-1 form-floating mb-3">
-            <input type="text" id="floatingInput" autocomplete="off" class="a_int_1 inputtik3 form-control">
-            <label for="floatingInput">Interrogative</label>
-            <div id="result3"></div>
-        </div>
-
-        <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">You</span></h4>
-        <div class="affirmative-1">
-            <p>Affirmative:</p>
-            <input type="text" id="" autocomplete="off" class="a_aff_2 inputtik4 form-control">
-            <div id="result4"></div>
-        </div>
-
-        <div class="negative-1">
-            <p>Negative:</p>
-            <input type="text" id="" autocomplete="off" class="a_neg_2 inputtik5 form-control">
-            <div id="result5"></div>
-        </div>
-
-        <div class="interrogative-1">
-            <p>Interrogative:</p>
-            <input type="text" id="" autocomplete="off" class="a_int_2 inputtik6 form-control">
-            <div id="result6"></div>
-        </div>
-
-        <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">He</span></h4>
-        <div class="affirmative-1">
-            <p>Affirmative:</p>
-            <input type="text" id="" autocomplete="off" class="a_aff_3 inputtik7 form-control">
-            <div id="result7"></div>
-        </div>
+        <!-- <br/> -->
         
-        <div class="negative-1">
-            <p>Negative:</p>
-            <input type="text" id="" autocomplete="off" class="a_neg_3 inputtik8 form-control">
-            <div id="result8"></div>
-        </div>
+        <!-- <br/> -->
+        <div class="inputs container">
+                
+            <h4 id="hey-bro nice-pic">Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">I</span></h4>
+            <div class="affirmative-1 form-floating mb-3">
+                <input type="text" id="a_aff_1" autocomplete="off" class="a_aff_1 inputtik1 form-control">
+                <label for="a_aff_1">Affirmative</label>
+                <div id="result1"></div>
+            </div>
 
-        <div class="interrogative-1">
-            <p>Interrogative:</p>
-            <input type="text" id="" autocomplete="off" class="a_int_3 inputtik9 form-control">
-            <div id="result9"></div>
+            <div class="negative-1 form-floating mb-3">
+                <input type="text" id="a_neg_1" autocomplete="off" class="a_neg_1 inputtik2 form-control">
+                <label for="a_neg_1">Negative</label>
+                <div id="result2"></div>
+            </div>
+
+            <div class="interrogative-1 form-floating mb-3">
+                <input type="text" id="a_int_1" autocomplete="off" class="a_int_1 inputtik3 form-control">
+                <label for="a_int_1">Interrogative</label>
+                <div id="result3"></div>
+            </div>
+
+            <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">You</span></h4>
+            <div class="affirmative-1 form-floating mb-3">
+                
+                <input type="text" id="a_aff_2" autocomplete="off" class="a_aff_2 inputtik4 form-control">
+                <label for="a_aff_2">Affirmative</label>
+                <div id="result4"></div>
+            </div>
+
+            <div class="negative-1 form-floating mb-3">
+                
+                <input type="text" id="a_neg_2" autocomplete="off" class="a_neg_2 inputtik5 form-control">
+                <label for="a_neg_2">Negative</label>
+                <div id="result5"></div>
+            </div>
+
+            <div class="interrogative-1 form-floating mb-3">
+                
+                <input type="text" id="a_int_2" autocomplete="off" class="a_int_2 inputtik6 form-control">
+                <label for="a_int_2">Interrogative</label>
+                <div id="result6"></div>
+            </div>
+
+            <h4>Местоимение <span style="font-family: 'Georgia', serif;" class="badge bg-secondary">He</span></h4>
+            <div class="affirmative-1 form-floating mb-3">
+                
+                <input type="text" id="a_aff_3" autocomplete="off" class="a_aff_3 inputtik7 form-control">
+                <label for="a_aff_3">Affirmative</label>
+                <div id="result7"></div>
+            </div>
+            
+            <div class="negative-1 form-floating mb-3">
+                
+                <input type="text" id="a_neg_3" autocomplete="off" class="a_neg_3 inputtik8 form-control">
+                <label for="a_neg_3">Negative</label>
+                <div id="result8"></div>
+            </div>
+
+            <div class="interrogative-1 form-floating mb-3">
+                
+                <input type="text" id="a_int_3" autocomplete="off" class="a_int_3 inputtik9 form-control">
+                <label for="a_int_3">Interrogative</label>
+                <div id="result9"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success bar-easy" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0.000001%"></div>
+            </div>
+            <div class="bar-final"></div>
         </div>
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success bar-easy" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0.000001%"></div>
-        </div>
-        <div class="bar-final"></div>
     </div>
     
 

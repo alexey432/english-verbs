@@ -58,15 +58,8 @@ function piska(inputtik, numWritingArr) {
         nnn -= Math.floor(1/9*100);
         writingArr[numWritingArr] = '';
     }
-    progress.style = `width: ${nnn}%;`;
+    progress.style = `width: ${nnn > 95 ? 100 : nnn}%;`;
 };
-
-
-
-
-    
-
-
 
 
 async function update() {
@@ -95,39 +88,52 @@ async function check() {
 
     // const regexArr = [a_aff_1, a_neg_1, a_int_1, a_aff_2, a_neg_2, a_int_2, a_aff_3, a_neg_3, a_int_3];
     const regexNegArr = [a_neg_1, a_neg_2, a_neg_3];
+    const pronouns = ['I ','i ', 'you ', 'he ', 'she ', 'it ', 'they ', 'we '];
+
 
     const regex = /[?]/g;
-    const regex2 = /n+'+t/gm;
+    const regexNeg = /n+'+t/gm;
     const regexFuture = /won't/g;
     const regexAm = /'m not/g;
-    
+    const regexPronouns = new RegExp(pronouns.join('|'), 'g');
+
     let neg_1,
         neg_2,
         neg_3;
 
+    // Negative
     if(tense.textContent == tenses[0] || tense.textContent == tenses[1]){
-        neg_1 = a_neg_1.value.replace(regex2, ' not');
-        neg_2 = a_neg_2.value.replace(regex2, ' not');
-        neg_3 = a_neg_3.value.replace(regex2, ' not');
+        neg_1 = a_neg_1.value.replace(regexNeg, ' not');
+        neg_2 = a_neg_2.value.replace(regexNeg, ' not');
+        neg_3 = a_neg_3.value.replace(regexNeg, ' not');
     } else if(tense.textContent == tenses[2]){
         neg_1 = a_neg_1.value.replace(regexFuture, 'will not');
         neg_2 = a_neg_2.value.replace(regexFuture, 'will not');
         neg_3 = a_neg_3.value.replace(regexFuture, 'will not');
     }
 
-    console.log(neg_1);
-    console.log(chosenVerb.a_neg_1);
+    // console.log(a_aff_1.value.toLowerCase().replace(regexPronouns, ''))
 
-    result1.textContent = a_aff_1.value.trimEnd() === chosenVerb.a_aff_1 ? 'good' : 'bad';
-    result2.textContent = neg_1.trimEnd() === chosenVerb.a_neg_1 ? 'good' : 'bad';
-    result3.textContent = a_int_1.value.trimEnd().replace(regex, '') === chosenVerb.a_int_1 ? 'good' : 'bad';
-    result4.textContent = a_aff_2.value.trimEnd() === chosenVerb.a_aff_2 ? 'good' : 'bad';
-    result5.textContent = neg_2.trimEnd() === chosenVerb.a_neg_2 ? 'good' : 'bad';
-    result6.textContent = a_int_2.value.trimEnd().replace(regex, '') === chosenVerb.a_int_2 ? 'good' : 'bad';
-    result7.textContent = a_aff_3.value.trimEnd() === chosenVerb.a_aff_3 ? 'good' : 'bad';
-    result8.textContent = neg_3.trimEnd() === chosenVerb.a_neg_3 ? 'good' : 'bad';
-    result9.textContent = a_int_3.value.trimEnd().replace(regex, '') === chosenVerb.a_int_3 ? 'good' : 'bad';
+    result1.textContent = a_aff_1.value.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_aff_1.toLowerCase() ? 'good' : chosenVerb.a_aff_1;
+    result2.textContent = neg_1.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_neg_1.toLowerCase() ? 'good' : chosenVerb.a_neg_1;
+    result3.textContent = a_int_1.value.trim().replace(regex, '').toLowerCase().trim() === chosenVerb.a_int_1.toLowerCase() ? 'good' : chosenVerb.a_int_1;
+    result4.textContent = a_aff_2.value.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_aff_2.toLowerCase() ? 'good' : chosenVerb.a_aff_2;
+    result5.textContent = neg_2.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_neg_2.toLowerCase() ? 'good' : chosenVerb.a_neg_2;
+    result6.textContent = a_int_2.value.trim().replace(regex, '').toLowerCase().trim() === chosenVerb.a_int_2.toLowerCase() ? 'good' : chosenVerb.a_int_2;
+    result7.textContent = a_aff_3.value.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_aff_3.toLowerCase() ? 'good' : chosenVerb.a_aff_3;
+    result8.textContent = neg_3.trim().toLowerCase().replace(regexPronouns, '').trim() === chosenVerb.a_neg_3.toLowerCase() ? 'good' : chosenVerb.a_neg_3;
+    result9.textContent = a_int_3.value.trim().replace(regex, '').toLowerCase().trim() === chosenVerb.a_int_3.toLowerCase() ? 'good' : chosenVerb.a_int_3;
     
+    result1.textContent === 'good' ? result1.style = 'color: green;' : result1.style = 'color: red;';
+    result2.textContent === 'good' ? result2.style = 'color: green;' : result2.style = 'color: red;';
+    result3.textContent === 'good' ? result3.style = 'color: green;' : result3.style = 'color: red;';
+    result4.textContent === 'good' ? result4.style = 'color: green;' : result4.style = 'color: red;';
+    result5.textContent === 'good' ? result5.style = 'color: green;' : result5.style = 'color: red;';
+    result6.textContent === 'good' ? result6.style = 'color: green;' : result6.style = 'color: red;';
+    result7.textContent === 'good' ? result7.style = 'color: green;' : result7.style = 'color: red;';
+    result8.textContent === 'good' ? result8.style = 'color: green;' : result8.style = 'color: red;';
+    result9.textContent === 'good' ? result9.style = 'color: green;' : result9.style = 'color: red;';
+
     // Progress Bar-easy
     let n = 0;
     resultsArr.forEach(result => {
@@ -135,7 +141,7 @@ async function check() {
             n+= 1/9;
         }
     })
-    console.log(n*100);
+    // console.log(n*100);
     progressEasy.style = `width: ${n*100}%;`;
     
     if(n*100 >= 100){

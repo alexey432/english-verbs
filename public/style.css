@@ -41,7 +41,7 @@
 }
 
 #verb {
-    margin-left: 18px;
+    margin-left: 24px;
 }
 
 #tense {
@@ -59,5 +59,10 @@
 #result8,
 #result9 {
     margin-left: 10px;
-    /* color: brown; */
+    width: 450px
 }
+
+#hey-bro {
+    color: red;
+}
+
