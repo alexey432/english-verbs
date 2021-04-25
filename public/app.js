@@ -39,6 +39,8 @@ const inputtik7 = document.querySelector('.inputtik7');
 const inputtik8 = document.querySelector('.inputtik8');
 const inputtik9 = document.querySelector('.inputtik9');
 
+const inputsArr = [inputtik1, inputtik2, inputtik3, inputtik4, inputtik5, inputtik6, inputtik7, inputtik8, inputtik9];
+
 inputtik1.addEventListener('change', () => piska(inputtik1, 0));
 inputtik2.addEventListener('change', () => piska(inputtik2, 1));
 inputtik3.addEventListener('change', () => piska(inputtik3, 2));
